@@ -136,7 +136,7 @@ def produce_data_to_kafka(producer, topic, data):
         topic,
         key=str(data["id"]),
         value=json.dumps(data, default=json_serializer).encode("utf-8"),
-        on_delivery=delivery_report,
+        on_delivery=delivery_report
     )
 
     producer.flush()
